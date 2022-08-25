@@ -1,0 +1,63 @@
+@import 'base/errors';
+@import 'base/flash';
+@import 'base/null';
+@import 'base/common';
+@import 'base/form';
+@import 'parts/header';
+@import 'parts/home';
+@import 'parts/questions';
+@import 'parts/question-show';
+@import 'parts/footer.scss';
+@import 'parts/answers.scss';
+
+.question-show__answers {
+  margin-top: 30px;
+}
+.answers-question {
+  border: 1px solid rgb(207, 223, 71);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  border-radius: 6px;
+  &__body {
+    border: 1px solid #74ca80;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+  }
+  &__text {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  &__links {
+    display: flex;
+    gap: 10px;
+  }
+  &__btn {
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 4px;
+    color: #fff;
+    transition: all 0.2s ease 0s;
+    &:hover {
+      opacity: 0.8;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+      transform: scale(103%);
+    }
+    &_del {
+      background-color: rgb(141, 7, 7);
+    }
+    &_edit {
+      background-color: rgb(14, 117, 45);
+    }
+  }
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(207, 223, 71);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

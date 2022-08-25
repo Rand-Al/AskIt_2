@@ -1,0 +1,28 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+
+  &__title {
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  &__text {
+    font-size: 20px;
+    margin-bottom: 20px;
+    &:nth-of-type(2) {
+      flex: 1 1 auto;
+    }
+  }
+  &__link {
+    color: rgba(0, 0, 0, 0.658);
+    transition: all 0.2s ease 0s;
+    &:hover {
+      color: #000;
+    }
+  }
+}

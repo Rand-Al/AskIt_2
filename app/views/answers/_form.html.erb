@@ -1,0 +1,14 @@
+  <%= form_with model: [@question, @answer] do |f| %>
+    <div class="form__line">
+      <div class="form__wrapper">
+        <%= f.label :body, 'Correct your answer:', class: 'form__label form__label_edit' %>
+      </div>
+      <div class="form__wrapper">
+        <%= f.text_area :body, class: 'form__text' %>
+      </div>
+    </div>
+
+    <div class="form__line">
+      <%= f.submit 'Submit', class: 'form__button' %>
+    </div>
+  <% end %>

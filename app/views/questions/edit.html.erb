@@ -1,0 +1,6 @@
+<%= currently_at('Edit Question')%>
+<% flash.each do |k, v|%>
+    <%= v%>
+    <%=k %>
+<% end %>
+<%= render 'form' %>

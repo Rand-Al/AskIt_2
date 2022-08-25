@@ -1,0 +1,23 @@
+<%= currently_at('Edit Question')%>
+
+<div class="question-show" >
+  <h2 class="question-show__title title"><%= @question.title %></h2>
+  <div class="question-show__text"><%= sanitize @question.body %></div>
+  <div class="question-show__links">
+      <%= link_to 'Edit', edit_question_path(@question), class: 'question-show__link question-show__link_edit' %>
+      <%= link_to 'Delete', question_path(@question), class: 'question-show__link question-show__link_delete', data: {method: :delete, confirm: 'Are you sure?' }%>
+  </div>
+  <div class="question-show__form">
+    <%= render 'answers/index' %>
+  </div>
+</div>
+
+
+
+
+    
+
+  
+
+
+

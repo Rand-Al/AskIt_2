@@ -1,0 +1,81 @@
+.form {
+  color: rgba(0, 0, 0, 0.753);
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  border: 1px solid #74ca80;
+  padding: 20px;
+  border-radius: 5px;
+  &__wrapper {
+  }
+  &__line {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 360px;
+    row-gap: 10px;
+  }
+  &__label {
+    font-size: 24px;
+    &_edit {
+      margin-bottom: 10px;
+      display: block;
+    }
+  }
+  &__input {
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid rgb(207, 223, 71);
+    transition: all 0.3s ease 0s;
+    border-radius: 3px;
+    &::placeholder {
+      font-size: 18px;
+    }
+    &:focus {
+      outline: none;
+      transform: scale(102%);
+      box-shadow: 0 0 10px rgb(207, 223, 71);
+    }
+  }
+  &__text {
+    padding: 10px 10px 0px 10px;
+    width: 100%;
+    border: 1px solid rgb(207, 223, 71);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    font-family: 'Times New Roman';
+    height: 150px;
+    transition: all 0.3s ease 0s;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    &:focus {
+      outline: none;
+      transform: scale(102%);
+      box-shadow: 0 0 10px rgb(207, 223, 71);
+    }
+  }
+  &__button {
+    padding: 10px 20px;
+    background-color: rgb(131, 207, 59);
+    border-radius: 6px;
+    color: rgb(238, 238, 238);
+    font-size: 21px;
+    transition: all 0.2s ease 0s;
+    font-weight: 700;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(131, 207, 59, 0.911);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+//========================================================================================================================================================
+.answer-edit-form {
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__item {
+  }
+}

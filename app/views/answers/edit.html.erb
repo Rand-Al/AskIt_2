@@ -1,0 +1,13 @@
+<% currently_at('Edit Answer')%>
+
+<div class="answer-edit-form">
+  <h2 class="answer-edit-form__title title">You can change your answer here.</h2>
+  <div class="answer-edit-form__item">
+    <%= render 'shared/errors', object: @answer %>
+  </div>
+
+  <div class="answer-edit-form__item">
+    <%= render 'form' %>
+  </div>
+  
+</div>  

@@ -1,0 +1,82 @@
+.questions {
+  &__container {
+  }
+  &__title {
+  }
+  &__body {
+  }
+  &__links {
+  }
+}
+.links-questions {
+  margin-bottom: 20px;
+  &__link {
+    font-size: 20px;
+    color: rgba(18, 138, 14, 0.952);
+    transition: all 0.2s ease 0s;
+    border: 1px solid rgba(18, 138, 14, 0.952);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    display: block;
+    max-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      color: rgb(8, 63, 6);
+      border-bottom: 1px solid rgba(18, 138, 14, 0.952);
+      transform: scale(102%);
+    }
+  }
+}
+.body-questions {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  &__item {
+    border: 1px solid rgb(149, 218, 20);
+    padding: 20px;
+    border-radius: 6px;
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  &__text {
+    margin-bottom: 20px;
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__link {
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 4px;
+    color: #fff;
+    transition: all 0.2s ease 0s;
+    &:hover {
+      opacity: 0.8;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+      transform: scale(103%);
+    }
+    &_show {
+      background-color: rgb(29, 31, 150);
+    }
+    &_edit {
+      background-color: rgb(14, 117, 45);
+    }
+    &_delete {
+      background-color: rgb(141, 7, 7);
+    }
+  }
+}
+.answers-question__form {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,10 @@
+<%= provide :main_menu do%>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__links links-header">
+        <%= nav_tab'Questions', questions_path, class: 'links-header__link', current_page: current_page %>
+        <%= nav_tab 'Home', root_path, class: 'links-header__link', current_page: current_page  %>
+      </div>
+    </div>
+  </header> 
+<% end %>

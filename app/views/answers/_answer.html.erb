@@ -1,0 +1,11 @@
+<div class="answers-question__body" id="answer-<%= answer.id%>">
+  <div class="answers-question__text">
+    <%= sanitize answer.body %>
+  </div>
+
+  <div class="answers-question__links">
+    <%= link_to 'Edit', edit_question_answer_path(question, answer), class: 'answers-question__btn answers-question__btn_edit' %>
+    <%= link_to 'Delete', question_answer_path(question, answer), data:{method: :delete, confirm: 'Are you sure?'}, class: 'answers-question__btn answers-question__btn_del' %>
+  </div>
+      
+</div>

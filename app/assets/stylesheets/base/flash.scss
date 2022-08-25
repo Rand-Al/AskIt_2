@@ -1,0 +1,11 @@
+.flash {
+  padding: 10px 20px;
+  background-color: rgba(51, 161, 24, 0.795);
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  border-radius: 3px;
+  &__item {
+    color: #fff;
+  }
+}

@@ -1,0 +1,41 @@
+.question-show {
+  margin-top: 30px;
+  border: 1px solid rgb(207, 223, 71);
+  display: inline-flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  border-radius: 5px;
+  &__title {
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  &__text {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  &__links {
+    display: flex;
+    gap: 10px;
+  }
+  &__link {
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 4px;
+    color: #fff;
+    transition: all 0.2s ease 0s;
+    &:hover {
+      opacity: 0.8;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+      transform: scale(103%);
+    }
+    &_show {
+      background-color: rgb(29, 31, 150);
+    }
+    &_edit {
+      background-color: rgb(14, 117, 45);
+    }
+    &_delete {
+      background-color: rgb(141, 7, 7);
+    }
+  }
+}

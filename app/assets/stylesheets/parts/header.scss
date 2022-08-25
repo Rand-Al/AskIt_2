@@ -1,0 +1,32 @@
+.header {
+  background-color: rgb(134, 201, 128);
+  margin-bottom: 20px;
+  &__container {
+    height: 100%;
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+    gap: 10px;
+  }
+}
+.links-header {
+  &__link {
+    font-size: 18px;
+    color: #fff;
+    transition: all 0.2s ease 0s;
+    &:hover {
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.384);
+    }
+  }
+  &__link.active {
+    color: rgba(54, 121, 10, 0.39);
+    border-bottom: 1px solid rgba(54, 121, 10, 0.39);
+    cursor: default;
+    &:hover {
+      color: rgba(54, 121, 10, 0.39);
+      text-shadow: none;
+    }
+  }
+}

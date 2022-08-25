@@ -1,0 +1,31 @@
+[class*='__container'] {
+  max-width: 960px;
+  margin: 0 auto;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex: 1 1 auto;
+  &__container {
+    height: 100%;
+  }
+}
+.title {
+  padding: 10px 0px;
+  font-size: 30px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.801);
+}
+.field_with_errors {
+  label {
+    color: rgb(141, 37, 37);
+  }
+  input {
+    box-shadow: 0 0 10px rgba(146, 38, 38, 0.589);
+  }
+  textarea {
+    box-shadow: 0 0 10px rgba(146, 38, 38, 0.589);
+  }
+}

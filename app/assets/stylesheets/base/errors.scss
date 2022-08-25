@@ -1,0 +1,21 @@
+.errors {
+  margin-bottom: 20px;
+  &__list {
+    border: 1px solid rgba(245, 3, 3, 0.842);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__item {
+    color: rgba(245, 3, 3, 0.842);
+  }
+  &__title {
+    line-height: 1.2;
+    font-size: 20px;
+    color: rgba(245, 3, 3, 0.842);
+    text-shadow: 1px 1px 3px rgb(163, 153, 153);
+    margin-bottom: 20px;
+  }
+}
