@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: %i[show edit update destroy]
 
   def index
-    @questions = Question.all.order(created_at: :desc)
+    @questions = Question.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def new

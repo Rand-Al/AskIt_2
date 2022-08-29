@@ -6,11 +6,12 @@
     <div class="questions__links links-questions">
       <%= link_to 'Ask Question', new_question_path, class: 'links-questions__link'%>
     </div> 
+    <%= paginate @questions %>
     <div class="questions__body body-questions">
       <% @questions.each do |q|%>
         <div class="body-questions__item">
           <h4 class="body-questions__title"><%= q.title %></h4>
-          <p class="body-questions__text"><%= strip_tags q.body %></p>
+          <p class="body-questions__text"><%= truncate strip_tags(q.body), length: 150 %></p>
           <div class="body-questions__links">
             <%= link_to 'Show', question_path(q), class: 'body-questions__link body-questions__link_show' %>
             <%= link_to 'Edit', edit_question_path(q), class: 'body-questions__link body-questions__link_edit' %>
