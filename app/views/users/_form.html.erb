@@ -1,0 +1,36 @@
+<%= render 'shared/errors', object: @user %>
+
+<%= form_with model: @user, html: { class: 'form form_reg' } do |f| %>
+  <div class="form__line">
+    <%= f.label :email,'E-mail', class: 'form__label'%>
+    <%= f.text_field :email, placeholder: 'Enter your E-mail', class: 'form__input' %>
+  </div>
+
+  <div class="form__line">
+    <%= f.label :name,'Name', class: 'form__label'%>
+    <%= f.text_field :name, placeholder: 'Enter your name', class: 'form__input' %>
+  </div>
+
+  <div class="form__line">
+    <div class="form__wrapper">
+      <%= f.label :password, 'Password', class: 'form__label' %>
+    </div>
+    <div class="form__wrapper">
+      <%= f.password_field :password, placeholder: 'Enter your password', class: 'form__input' %>
+    </div>
+  </div>
+
+   <div class="form__line">
+    <div class="form__wrapper">
+      <%= f.label :password_confirmation, 'Password Confirmation', class: 'form__label' %>
+    </div>
+    <div class="form__wrapper">
+      <%= f.password_field :password_confirmation, placeholder: 'Confirm your password', class: 'form__input' %>
+    </div>
+  </div>
+
+  <div class="form__line">
+    <%= f.submit 'Submit', class: 'form__button' %>
+  </div>
+
+<% end %>
