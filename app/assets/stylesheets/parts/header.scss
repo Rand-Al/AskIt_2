@@ -1,6 +1,5 @@
 .header {
   background-color: rgb(134, 201, 128);
-  margin-bottom: 20px;
   &__container {
     height: 100%;
   }
@@ -12,6 +11,11 @@
   }
 }
 .links-header {
+  &__wrapper {
+    &:nth-child(2) {
+      flex: 1 1 auto;
+    }
+  }
   &__link {
     font-size: 18px;
     color: #fff;

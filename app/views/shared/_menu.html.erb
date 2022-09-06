@@ -2,8 +2,25 @@
   <header class="header">
     <div class="header__container">
       <div class="header__links links-header">
-        <%= nav_tab'Questions', questions_path, class: 'links-header__link', current_page: current_page %>
-        <%= nav_tab 'Home', root_path, class: 'links-header__link', current_page: current_page  %>
+
+        <div class="links-header__wrapper">
+          <%= nav_tab'Questions', questions_path, class: 'links-header__link', current_page: current_page %>
+        </div>
+
+        <div class="links-header__wrapper">
+          <%= nav_tab 'Home', root_path, class: 'links-header__link', current_page: current_page  %>
+        </div>
+        <% if user_signed_in? %>
+          <div class="links-header__wrapper">
+            <%= nav_tab "#{current_user&.name ? current_user&.name : current_user&.email.split('@')[0]}", new_user_path, class: 'links-header__link', current_page: current_page  %>
+          </div>
+        <% else %>
+          <div class="links-header__wrapper">
+            <%= nav_tab 'Sign Up', new_user_path, class: 'links-header__link', current_page: current_page  %>
+          </div>
+        <% end %>
+        
+
       </div>
     </div>
   </header> 

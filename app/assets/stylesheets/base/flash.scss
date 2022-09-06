@@ -2,9 +2,11 @@
   padding: 10px 20px;
   background-color: rgba(51, 161, 24, 0.795);
   text-align: center;
-  display: inline-block;
   margin: 0 auto;
+  margin-top: 10px;
   border-radius: 3px;
+  position: relative;
+  z-index: 5;
   &__item {
     color: #fff;
   }

@@ -11,7 +11,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="body">
     <%= yield :main_menu %>
     <main class="main">
       <div class="main__container">
@@ -21,7 +21,7 @@
     </main>
     <footer class="footer">
       <div class="header__container">
-        <p class="footer__text">&copy; Vit Poll, <%= Time.now.year %></p>
+        <p class="footer__text">&copy; Vit Poll, <span class="footer__year"><%= Time.now.year %></span></p>
       </div>
     </footer>
   </body>

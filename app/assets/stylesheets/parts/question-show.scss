@@ -5,6 +5,8 @@
   flex-direction: column;
   padding: 20px 30px;
   border-radius: 5px;
+  position: relative;
+  z-index: 5;
   &__title {
     margin-bottom: 20px;
     padding: 0;

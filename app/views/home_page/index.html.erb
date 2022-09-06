@@ -1,10 +1,11 @@
-<%= currently_at('Home')%>
+<% provide :title, 'Home' %>
+<%= currently_at('Home') %>
 
 <div class="home">
   <h1 class="home__title title">Welcome to AskIt</h1>
-  <p class="home__text"> This resource where users can ask question and get answer on it </p>
+  <p class="home__text"> This resource where users can <%= link_to 'ask question', new_question_path, class: 'home__link' %> and get answer on it </p>
   <p class="home__text">Hope you'll enjoy it</p>
   <p class="home__text">
-    <%= link_to 'Ask Question', new_question_path, class: 'home__link' %>
+    
   </p>
 </div>

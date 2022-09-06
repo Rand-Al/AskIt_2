@@ -6,6 +6,10 @@
   border: 1px solid #74ca80;
   padding: 20px;
   border-radius: 5px;
+  position: relative;
+  z-index: 5;
+  margin-top: 20px;
+  margin-bottom: 20px;
   &__wrapper {
   }
   &__line {
@@ -70,9 +74,15 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
   }
+  &_reg {
+    flex: 0 1 370px;
+    margin-bottom: 10зч;
+  }
 }
 //========================================================================================================================================================
 .answer-edit-form {
+  position: relative;
+  z-index: 5;
   &__title {
     margin-bottom: 20px;
   }

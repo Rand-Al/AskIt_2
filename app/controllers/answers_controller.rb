@@ -13,10 +13,7 @@ class AnswersController < ApplicationController
     if @answer.save
       redirect_to question_path(@question, anchor: "answer-#{ @answer.id }")
     else
-      # @question = Question.find(params[:question_id])
-
-      @question.reload
-      
+      @question.reload      
       @answers = @question.answers
       render 'questions/show'
     end
