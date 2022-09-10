@@ -10,7 +10,16 @@
     <%= f.label :name,'Name', class: 'form__label'%>
     <%= f.text_field :name, placeholder: 'Enter your name', class: 'form__input' %>
   </div>
-
+  <% unless @user.new_record? %>
+    <div class="form__line">
+      <div class="form__wrapper">
+        <%= f.label :old_password, 'Old Password', class: 'form__label' %>
+      </div>
+      <div class="form__wrapper">
+        <%= f.password_field :old_password, placeholder: 'Enter your old password', class: 'form__input' %>
+      </div>
+    </div>
+  <% end %>
   <div class="form__line">
     <div class="form__wrapper">
       <%= f.label :password, 'Password', class: 'form__label' %>
@@ -30,7 +39,7 @@
   </div>
 
   <div class="form__line">
-    <%= f.submit 'Submit', class: 'form__button' %>
+    <%= f.submit (@user.new_record? ? 'Register' : 'Update data'), class: 'form__button' %>
   </div>
 
 <% end %>

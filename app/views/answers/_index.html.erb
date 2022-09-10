@@ -10,25 +10,6 @@
 
   <%= render 'shared/errors', object: @answer %>
 
-  <div class="answers-question__form">
-
-      <%= form_with model: [@question, @answer], html: {class: 'form' } do |f| %>
-
-        <div class="form__line">
-          <div class="form__wrapper">
-            <%= f.label :body, 'Enter Answer', class: 'form__label' %>
-          </div>
-          <div class="form__wrapper">
-            <%= f.text_area :body, class: 'form__text' %>
-          </div>
-        </div>
-        <div class="form__line">
-          <%= f.submit 'Submit', class: 'form__button' %>
-        </div>
-
-      <% end %>
-
-  </div>
-
+ 
 
 </div>

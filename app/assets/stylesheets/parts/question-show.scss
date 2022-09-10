@@ -1,4 +1,6 @@
 .question-show {
+  max-width: 700px;
+  margin: 0 auto;
   margin-top: 30px;
   border: 1px solid rgb(207, 223, 71);
   display: inline-flex;
@@ -7,6 +9,8 @@
   border-radius: 5px;
   position: relative;
   z-index: 5;
+  margin-bottom: 50px;
+
   &__title {
     margin-bottom: 20px;
     padding: 0;
@@ -17,7 +21,8 @@
   }
   &__links {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    justify-content: center;
   }
   &__link {
     padding: 10px 20px;

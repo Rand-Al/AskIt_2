@@ -7,9 +7,31 @@
       <%= link_to 'Edit', edit_question_path(@question), class: 'question-show__link question-show__link_edit' %>
       <%= link_to 'Delete', question_path(@question), class: 'question-show__link question-show__link_delete', data: {method: :delete, confirm: 'Are you sure?' }%>
   </div>
-  <div class="question-show__form">
-    <%= render 'answers/index' %>
+  <% if @question.answers.any?%>
+      <%= render 'answers/index' %>
+  <% else %>
+    <div class="question-show__seal"></div>
+  <% end %>
+   <div class="answers-question__form">
+
+      <%= form_with model: [@question, @answer], html: {class: 'form' } do |f| %>
+
+        <div class="form__line">
+          <div class="form__wrapper">
+            <%= f.label :body, 'Enter Answer', class: 'form__label' %>
+          </div>
+          <div class="form__wrapper">
+            <%= f.text_area :body, class: 'form__text' %>
+          </div>
+        </div>
+        <div class="form__line">
+          <%= f.submit 'Submit', class: 'form__button' %>
+        </div>
+
+      <% end %>
+  
   </div>
+
 </div>
 
 

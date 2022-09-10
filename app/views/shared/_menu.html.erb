@@ -11,17 +11,49 @@
           <%= nav_tab 'Home', root_path, class: 'links-header__link', current_page: current_page  %>
         </div>
         <% if user_signed_in? %>
-          <div class="links-header__wrapper">
-            <%= nav_tab "#{current_user&.name ? current_user&.name : current_user&.email.split('@')[0]}", new_user_path, class: 'links-header__link', current_page: current_page  %>
+          <div class="dropdown" id="dropdown" >
+            <button onclick="myFunction()" class="dropbtn">Vitalii</button>
+            <div id="myDropdown" class="dropdown-content">
+              <div class="links-header__wrapper">
+                <%= nav_tab "Edit Profile", edit_user_path(current_user), class: 'links-header__link', current_page: current_page  %>
+              </div>
+              <div class="links-header__wrapper">
+                <%= link_to 'Log Out', session_path, class: 'links-header__link', method: :delete %>
+              </div>
+            </div>
           </div>
+          
+           
         <% else %>
           <div class="links-header__wrapper">
             <%= nav_tab 'Sign Up', new_user_path, class: 'links-header__link', current_page: current_page  %>
           </div>
+          <div class="links-header__wrapper">
+            <%= nav_tab 'Log In', new_session_path, class: 'links-header__link', current_page: current_page  %>
+          </div>
         <% end %>
-        
-
       </div>
     </div>
   </header> 
 <% end %>
+<script>
+  function myFunction() {
+    document.getElementById('myDropdown').classList.toggle('show');
+    document.getElementById('dropdown').classList.toggle('show');
+  }
+  window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+      let dropdowns = document.getElementsByClassName('dropdown-content');
+      let parent = document.getElementsByClassName('dropdown')[0];
+      if (parent.classList.contains('show')) {
+        parent.classList.remove('show')
+      }
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  };
+</script>

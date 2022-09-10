@@ -1,0 +1,36 @@
+<% provide :title, 'Log In'%>
+<%= currently_at('Log In')%>
+<div class="log-in">
+  <h2 class="log-in__title title">Log In</h2>
+  <div class="log-in__form">
+  <%= form_with url: session_path, html: {class: 'form form_log-in' } do |f| %>
+    <div class="form__line">
+      <div class="form__wrapper">
+        <%= f.label :email, 'Email', class: 'form__label' %>
+      </div>
+      <div class="form__wrapper">
+        <%= f.email_field :email, value: params[:email], class: 'form__input' %>
+      </div>
+    </div>
+
+    <div class="form__line">
+      <div class="form__wrapper">
+        <%= f.label :password, 'Password', class: 'form__label' %>
+      </div>
+      <div class="form__wrapper">
+        <%= f.password_field :password, class: 'form__input' %>
+      </div>
+    </div>
+
+    <div class="form__line form__line_checkbox">
+      <%= f.check_box :remember_me, class: 'form__checkbox', value: '1' %>
+      <%= f.label :remember_me, class: 'form__label form__label_checkbox' %>
+    </div>
+
+
+    <div class="form__line">
+      <%= f.submit 'Submit', class: 'form__button' %>
+    </div>
+  <% end %>
+  </div>
+</div>
