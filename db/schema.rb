@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_02_083448) do
+ActiveRecord::Schema.define(version: 2022_09_10_095551) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2022_09_02_083448) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "remember_token_digest"
   end
 
   add_foreign_key "answers", "questions"

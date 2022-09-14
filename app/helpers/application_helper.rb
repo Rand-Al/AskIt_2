@@ -1,5 +1,6 @@
-module ApplicationHelper
-  
+# frozen_string_literal: true
+
+module ApplicationHelper # rubocop:todo Style/Documentation
   def full_title(page_title = '')
     base_title = 'Answeres'
     if page_title.present?
@@ -10,18 +11,17 @@ module ApplicationHelper
   end
 
   def currently_at(current_page)
-    render partial: 'shared/menu', locals: {current_page: current_page}
+    render partial: 'shared/menu', locals: { current_page: current_page }
   end
 
   def nav_tab(title, url, options = {})
     current_page = options[:current_page]
     class_css = current_page == title ? 'active' : ''
     options[:class] = if options[:class]
-                        options[:class] + ' ' + class_css
+                        "#{options[:class]} #{class_css}"
                       else
-                        class_css 
+                        class_css
                       end
     link_to title, url, options
   end
-
 end

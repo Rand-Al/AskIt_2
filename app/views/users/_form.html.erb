@@ -25,7 +25,7 @@
       <%= f.label :password, 'Password', class: 'form__label' %>
     </div>
     <div class="form__wrapper">
-      <%= f.password_field :password, placeholder: 'Enter your password', class: 'form__input' %>
+      <%= f.password_field :password, placeholder: (@user.new_record? ? 'Enter password' : 'Enter new password'), class: 'form__input' %>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
       <%= f.label :password_confirmation, 'Password Confirmation', class: 'form__label' %>
     </div>
     <div class="form__wrapper">
-      <%= f.password_field :password_confirmation, placeholder: 'Confirm your password', class: 'form__input' %>
+      <%= f.password_field :password_confirmation, placeholder: (@user.new_record? ? 'Confirm password' : 'Confirm new password'), class: 'form__input' %>
     </div>
   </div>
 

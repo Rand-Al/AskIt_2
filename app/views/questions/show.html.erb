@@ -1,5 +1,5 @@
 <%= currently_at('Edit Question')%>
-
+<%= render 'shared/errors', object: @answer %>
 <div class="question-show" >
   <h2 class="question-show__title title"><%= @question.title %></h2>
   <div class="question-show__text"><%= sanitize @question.body %></div>
@@ -7,6 +7,7 @@
       <%= link_to 'Edit', edit_question_path(@question), class: 'question-show__link question-show__link_edit' %>
       <%= link_to 'Delete', question_path(@question), class: 'question-show__link question-show__link_delete', data: {method: :delete, confirm: 'Are you sure?' }%>
   </div>
+  
   <% if @question.answers.any?%>
       <%= render 'answers/index' %>
   <% else %>

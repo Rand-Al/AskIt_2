@@ -3,13 +3,6 @@
 
 <div class="question-show__answers answers-question">
   <h2 class="title">Answers</h2>
-
   <%= render partial: 'answers/answer', collection: @answers, as: :answer, locals: {question: @question} %>
-  
   <div class="line"></div>
-
-  <%= render 'shared/errors', object: @answer %>
-
- 
-
 </div>

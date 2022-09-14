@@ -1,4 +1,6 @@
-class AnswersController < ApplicationController
+# frozen_string_literal: true
+
+class AnswersController < ApplicationController # rubocop:todo Style/Documentation
   before_action :find_question
 
   def index
@@ -6,14 +8,13 @@ class AnswersController < ApplicationController
     render 'questions/show'
   end
 
-
   def create
-    flash[:success] = 'Your answer was asked!'
     @answer = @question.answers.build(answer_params)
     if @answer.save
-      redirect_to question_path(@question, anchor: "answer-#{ @answer.id }")
+      flash.now[:success] = 'Your answer was asked!'
+      redirect_to question_path(@question, anchor: "answer-#{@answer.id}")
     else
-      @question.reload      
+      @question.reload
       @answers = @question.answers
       render 'questions/show'
     end
@@ -23,18 +24,18 @@ class AnswersController < ApplicationController
     @answer = @question.answers.find(params[:id])
   end
 
-  def update 
-    flash[:success] = 'Your answer was edit!'
+  def update
+    flash.now[:success] = 'Your answer was edit!'
     @answer = @question.answers.find(params[:id])
     if @answer.update(answer_params)
-      redirect_to question_path(@question, anchor: "answer-#{ @answer.id }")
+      redirect_to question_path(@question, anchor: "answer-#{@answer.id}")
     else
       render :edit
     end
   end
 
   def destroy
-    flash[:success] = 'Your Answer was Deleted!'
+    flash[:success] = 'Your Answer was Deleted!' # rubocop:todo Rails/I18nLocaleTexts
     @answer = @question.answers.find(params[:id])
     @answer.destroy
     redirect_to question_path(@question)

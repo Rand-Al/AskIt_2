@@ -1,4 +1,6 @@
 .errors {
+  position: relative;
+  z-index: 5;
   margin-bottom: 20px;
   &__list {
     border: 1px solid rgba(245, 3, 3, 0.842);

@@ -189,3 +189,55 @@
     margin-bottom: 40px;
   }
 }
+//========================================================================================================================================================
+.admin-users {
+  position: relative;
+  z-index: 5;
+  &__title {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  &__table {
+    border: 2px solid hsla(128, 45%, 62%, 0.322);
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  &__download {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid #74ca80;
+    transition: all 0.2s ease 0s;
+    margin-bottom: 40px;
+    &:hover {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      transform: scale(100.5%);
+    }
+    &:active {
+      transform: scale(100%);
+    }
+  }
+}
+.table-admin-users {
+  &__header {
+    border: 1px solid hsla(128, 45%, 62%, 0.322);
+  }
+  &__cell {
+    padding: 10px;
+    border: 1px solid hsla(128, 45%, 62%, 0.322);
+  }
+  &__body {
+  }
+}
+.row {
+}
+
+//========================================================================================================================================================
+
+.upload-users {
+  margin-bottom: 30px;
+}

@@ -1,4 +1,6 @@
-class QuestionsController < ApplicationController
+# frozen_string_literal: true
+
+class QuestionsController < ApplicationController # rubocop:todo Style/Documentation
   before_action :set_question, only: %i[show edit update destroy]
 
   def index
@@ -9,13 +11,11 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
-  def edit
-    
-  end
+  def edit; end
 
   def update
     if @question.update(question_params)
-      flash[:success] = 'Your question was edit!'
+      flash[:success] = 'Your question was edit!' # rubocop:todo Rails/I18nLocaleTexts
       redirect_to questions_path
     else
       render :edit
@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      flash[:success] = 'Your question was asked!'
+      flash[:success] = 'Your question was asked!' # rubocop:todo Rails/I18nLocaleTexts
       redirect_to questions_path
     else
       render :new
@@ -38,12 +38,10 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    
-    flash[:success] = 'Your question was deleted!'
+    flash[:success] = 'Your question was deleted!' # rubocop:todo Rails/I18nLocaleTexts
     @question.destroy
     redirect_to questions_path
   end
-
 
   private
 
@@ -54,5 +52,4 @@ class QuestionsController < ApplicationController
   def set_question
     @question = Question.find(params[:id])
   end
-
 end

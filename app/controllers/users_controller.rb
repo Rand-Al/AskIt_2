@@ -1,7 +1,9 @@
-class UsersController < ApplicationController
-  before_action :set_user, only: %i[ edit update ]
-  before_action :require_no_authenticate,  only: %i[ new create ]
-  before_action :require_authenticate,  only: %i[ edit update ]
+# frozen_string_literal: true
+
+class UsersController < ApplicationController # rubocop:todo Style/Documentation
+  before_action :set_user, only: %i[edit update]
+  before_action :require_no_authenticate, only: %i[new create]
+  before_action :require_authenticate, only: %i[edit update]
 
   def new
     @user = User.new
@@ -18,9 +20,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    
-  end
+  def edit; end
 
   def update
     if @user.update user_params
@@ -31,9 +31,7 @@ class UsersController < ApplicationController
     end
   end
 
-
-
-  private 
+  private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :old_password)
@@ -42,5 +40,4 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-  
 end

@@ -1,0 +1,38 @@
+<% provide :title, 'Admin Users'%>
+<%= currently_at('Users')%>
+
+
+<section class="admin-users">
+  <h1 class="admin-users__title title">Admin Users</h1>
+  <%= paginate @users %>
+  <table class="admin-users__table table-admin-users">
+    <thead class="table-admin-users__header">
+      <tr>
+        <th class="table-admin-users__cell">#</th>
+        <th class="table-admin-users__cell">Name</th>
+        <th class="table-admin-users__cell">Email</th>
+        <th class="table-admin-users__cell">Created at</th>
+        <th class="table-admin-users__cell">Updated at</th>
+      </tr>
+    </thead>
+    <tbody class="table-admin-users__body">
+      <%= render @users %>
+    </tbody>
+  </table>
+  <div class="admin-users__download">
+    <%= link_to 'Download zipped XLSX', admin_users_path(format: :zip), class: 'admin-users__btn'%>
+  </div>
+</section>
+
+<section class="upload-users">
+  <h2 class="upload-users__title title">Upload users from XLSX</h2>
+  <%= form_with url: admin_users_path, html: {class: 'form form_upload-users'} do |f| %>
+    <div class="form__line">
+      <%= f.label :archive, 'Select archive', class: 'form__label' %>
+      <%= f.file_field :archive, class: 'form__file'%>
+    </div>
+    <div class="form__line">
+      <%= f.submit 'Upload!', class: 'form__button'%>
+    </div>
+  <% end %>
+</section>
